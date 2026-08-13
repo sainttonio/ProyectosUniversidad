@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Detalle del ala de parapente</title>
+  <desc id="desc">Un acercamiento al borde de ataque de un ala de parapente en tonos naranja y ámbar, con líneas suspendidas y montañas del Aconcagua al fondo.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7E5C8"/>
+      <stop offset="55%" stop-color="#F1C58B"/>
+      <stop offset="100%" stop-color="#E3A96E"/>
+    </linearGradient>
+    <linearGradient id="canopy" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D85A30"/>
+      <stop offset="55%" stop-color="#C66A28"/>
+      <stop offset="100%" stop-color="#BA7517"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="1100" fill="url(#sky)"/>
+  <path d="M0 474C102 445 180 456 257 432C359 400 432 341 520 334C626 325 730 391 900 334V0H0Z" fill="#F0D9B8" opacity="0.68"/>
+  <path d="M0 645L111 603L202 624L310 566L404 595L505 536L607 566L706 512L808 545L900 509V733H0Z" fill="#CFB698"/>
+  <path d="M0 852L123 798L228 835L338 777L442 815L559 756L674 804L787 748L900 795V1100H0Z" fill="#4F7330"/>
+
+  <g transform="translate(454 262)">
+    <path d="M-322 132C-232 9 -87 -50 53 -60C185 -69 316 -33 414 62C310 107 179 150 17 169C-143 182 -258 167 -322 132Z" fill="url(#canopy)"/>
+    <path d="M-276 126C-189 34 -74 -11 43 -19C153 -27 266 0 351 70" fill="none" stroke="#F9E9D8" stroke-width="8" opacity="0.58"/>
+    <path d="M-224 146L-110 614M-126 161L-34 646M-23 169L55 664M74 164L139 647M171 150L230 625" stroke="#F0E4D6" stroke-width="4.2" opacity="0.95"/>
+  </g>
+
+  <g transform="translate(485 859)">
+    <circle cx="0" cy="0" r="20" fill="#2D231E"/>
+    <path d="M0 20L0 107M0 48L-47 88M0 48L45 84M0 107L-31 176M0 107L29 175" stroke="#2D231E" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-23 31C-8 25 8 25 22 31L19 110L-18 110Z" fill="#3B6D11"/>
+  </g>
+
+  <path d="M0 928L115 885L218 920L321 873L422 909L534 858L644 899L753 851L900 912V1100H0Z" fill="#3B6D11"/>
+  <path d="M69 932L155 895L238 925L149 969Z" fill="#C68540"/>
+  <path d="M273 928L369 887L455 918L359 965Z" fill="#B27034"/>
+  <path d="M492 917L590 875L678 907L580 955Z" fill="#D1944A"/>
+
+  <g fill="#FAEDD9" opacity="0.42">
+    <ellipse cx="140" cy="170" rx="50" ry="14"/>
+    <ellipse cx="212" cy="154" rx="42" ry="11"/>
+    <ellipse cx="726" cy="222" rx="58" ry="15"/>
+  </g>
+</svg>

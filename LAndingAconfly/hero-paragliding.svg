@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Parapente sobre el Valle del Aconcagua</title>
+  <desc id="desc">Una escena editorial cálida del Valle del Aconcagua con montañas andinas, un río, viñedos y un piloto de parapente cruzando un cielo luminoso.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8E5C9"/>
+      <stop offset="40%" stop-color="#F5C98E"/>
+      <stop offset="100%" stop-color="#E7A96B"/>
+    </linearGradient>
+    <linearGradient id="farRange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6E9D5"/>
+      <stop offset="100%" stop-color="#C7B59E"/>
+    </linearGradient>
+    <linearGradient id="midRange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A86A3B"/>
+      <stop offset="100%" stop-color="#7E4E2B"/>
+    </linearGradient>
+    <linearGradient id="foreground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6D8A33"/>
+      <stop offset="100%" stop-color="#3B6D11"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#DDE8E3"/>
+      <stop offset="100%" stop-color="#8EB1B7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1230" cy="170" r="72" fill="#F8EDD8" opacity="0.9"/>
+  <path d="M0 335C180 300 280 315 420 288C580 258 720 194 865 184C1010 174 1172 238 1326 226C1442 217 1514 179 1600 154V0H0Z" fill="#F2DDBE" opacity="0.75"/>
+
+  <path d="M0 455L140 392L250 414L360 320L494 368L622 245L744 291L892 176L1034 220L1182 135L1326 230L1452 197L1600 252V560H0Z" fill="url(#farRange)"/>
+  <path d="M0 570L126 506L262 536L420 434L548 487L680 378L822 426L954 342L1090 399L1240 332L1378 384L1600 308V642H0Z" fill="url(#midRange)"/>
+  <path d="M0 675L154 620L286 658L398 610L512 646L640 584L758 626L888 566L1028 616L1148 553L1300 617L1460 566L1600 622V900H0Z" fill="#5C7E22"/>
+
+  <path d="M700 620C780 602 842 610 918 644C983 674 1035 721 1094 760C1162 806 1234 834 1332 851L1600 900H469C522 844 564 804 601 760C643 710 655 655 700 620Z" fill="#EFDCC0"/>
+  <path d="M935 628C1003 661 1060 716 1118 760C1189 814 1271 845 1397 864" fill="none" stroke="url(#river)" stroke-width="28" stroke-linecap="round" opacity="0.95"/>
+
+  <g opacity="0.95">
+    <path d="M0 720L134 671L272 716L388 675L526 721L655 666L782 714L904 667L1022 715L1160 662L1296 716L1420 669L1600 732V900H0Z" fill="url(#foreground)"/>
+    <path d="M78 716L160 668L226 702L148 746Z" fill="#D6A25B"/>
+    <path d="M246 734L346 680L432 717L329 773Z" fill="#C98B48"/>
+    <path d="M420 726L542 672L640 718L515 782Z" fill="#B97E3E"/>
+    <path d="M614 741L710 689L798 728L700 785Z" fill="#D3A460"/>
+    <path d="M930 734L1030 682L1115 721L1012 780Z" fill="#C98841"/>
+    <path d="M1174 728L1280 674L1386 718L1273 786Z" fill="#BC7A34"/>
+  </g>
+
+  <g transform="translate(1008 238)">
+    <path d="M-160 0C-92 -62 60 -62 160 0C118 22 75 35 0 40C-77 36 -121 22 -160 0Z" fill="#D85A30"/>
+    <path d="M-144 5C-85 -42 51 -43 144 5" fill="none" stroke="#F7EBDD" stroke-width="4" opacity="0.6"/>
+    <path d="M-90 18L-8 138L77 20" fill="none" stroke="#5F493A" stroke-width="4"/>
+    <path d="M-25 124L0 138L26 124" fill="none" stroke="#5F493A" stroke-width="3"/>
+    <circle cx="0" cy="144" r="8" fill="#3F3028"/>
+    <path d="M0 153L0 187M0 166L-16 182M0 166L18 180M0 187L-12 212M0 187L13 212" stroke="#3F3028" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#F8EEDB" opacity="0.55">
+    <ellipse cx="198" cy="176" rx="44" ry="12"/>
+    <ellipse cx="260" cy="160" rx="36" ry="10"/>
+    <ellipse cx="328" cy="186" rx="52" ry="13"/>
+    <ellipse cx="1312" cy="244" rx="48" ry="13"/>
+    <ellipse cx="1382" cy="230" rx="33" ry="9"/>
+  </g>
+</svg>

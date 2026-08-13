@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACONFLY | El valle desde otra vista</title>
+  <meta
+    name="description"
+    content="ACONFLY ofrece vuelos en parapente en tándem sobre el Valle del Aconcagua desde Santa María, Chile. Una experiencia cálida, segura y profundamente memorable."
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style id="theme-vars">
+    :root,
+    .light {
+      --aconfly-terracotta: #b65b3a;
+      --aconfly-terracotta-deep: #8b4328;
+      --aconfly-amber: #d9a441;
+      --aconfly-amber-soft: #f0d7a4;
+      --aconfly-forest: #305b46;
+      --aconfly-forest-deep: #1f3b2d;
+      --aconfly-cream: #f5eee5;
+      --aconfly-sand: #efe1cd;
+      --aconfly-stone: #6c675f;
+      --aconfly-ink: #1a1815;
+      --aconfly-white: #fffdf9;
+      --aconfly-shadow: 0 20px 60px rgba(31, 29, 25, 0.14);
+      --aconfly-radius: 28px;
+      --aconfly-radius-sm: 18px;
+      --aconfly-max: 1240px;
+    }
+
+    .dark {
+      --aconfly-terracotta: #d17755;
+      --aconfly-terracotta-deep: #f09a77;
+      --aconfly-amber: #f2c56a;
+      --aconfly-amber-soft: #5f4920;
+      --aconfly-forest: #6aa184;
+      --aconfly-forest-deep: #d7efdf;
+      --aconfly-cream: #191713;
+      --aconfly-sand: #26221c;
+      --aconfly-stone: #d2c6b3;
+      --aconfly-ink: #fff9f1;
+      --aconfly-white: #12100d;
+      --aconfly-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+  </style>
+  <style id="semantic-token-fallback">
+    :root {
+      --background: var(--aconfly-white);
+      --foreground: var(--aconfly-ink);
+      --muted: var(--aconfly-cream);
+      --muted-foreground: var(--aconfly-stone);
+      --card: rgba(255, 253, 249, 0.82);
+      --card-foreground: var(--aconfly-ink);
+      --border: rgba(48, 91, 70, 0.12);
+      --ring: rgba(182, 91, 58, 0.35);
+      --primary: var(--aconfly-terracotta);
+      --primary-foreground: var(--aconfly-white);
+      --secondary: var(--aconfly-amber);
+      --secondary-foreground: var(--aconfly-ink);
+      --accent: var(--aconfly-forest);
+      --accent-foreground: var(--aconfly-white);
+    }
+  </style>
+  <style type="text/tailwindcss">
+    @theme inline {
+      --color-background: var(--background);
+      --color-foreground: var(--foreground);
+      --color-card: var(--card);
+      --color-card-foreground: var(--card-foreground);
+      --color-border: var(--border);
+      --color-primary: var(--primary);
+      --color-primary-foreground: var(--primary-foreground);
+      --color-secondary: var(--secondary);
+      --color-secondary-foreground: var(--secondary-foreground);
+      --color-accent: var(--accent);
+      --color-accent-foreground: var(--accent-foreground);
+      --font-sans: "Segoe UI", "Avenir Next", "DM Sans", "Helvetica Neue", Arial, sans-serif;
+      --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+  </style>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--foreground);
+      background:
+        radial-gradient(circle at top left, rgba(217, 164, 65, 0.14), transparent 30%),
+        radial-gradient(circle at right 20%, rgba(48, 91, 70, 0.12), transparent 25%),
+        linear-gradient(180deg, #fbf7f1 0%, #f6efe5 48%, #fffdf9 100%);
+      font-family: "Segoe UI", "Avenir Next", "DM Sans", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a,
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container-shell {
+      width: min(calc(100% - 2rem), var(--aconfly-max));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--aconfly-forest);
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.6rem;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.6;
+    }
+
+    .section-heading h2,
+    .hero-title,
+    .brand-mark,
+    .service-card h3,
+    .timeline-card h3,
+    .about-card h3,
+    .faq-item h3,
+    .testimonial-card h3 {
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      letter-spacing: -0.03em;
+    }
+
+    .section-heading h2 {
+      margin: 0.75rem 0 0.85rem;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1;
+    }
+
+    .section-heading p {
+      max-width: 42rem;
+      margin: 0;
+      color: var(--muted-foreground);
+      font-size: 1.05rem;
+    }
+
+    .glass-panel {
+      background: rgba(255, 253, 249, 0.76);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: var(--aconfly-shadow);
+    }
+
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      transition: background-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+    }
+
+    .site-nav.scrolled {
+      background: rgba(245, 238, 229, 0.86);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(26, 24, 21, 0.08);
+    }
+
+    .nav-inner {
+      width: min(calc(100% - 1.4rem), calc(var(--aconfly-max) + 1rem));
+      margin: 1rem auto 0;
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: rgba(255, 253, 249, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .site-nav.scrolled .nav-inner {
+      background: transparent;
+      border-color: rgba(48, 91, 70, 0.08);
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--foreground);
+    }
+
+    .brand-badge {
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--aconfly-terracotta), var(--aconfly-amber));
+      color: var(--aconfly-white);
+      box-shadow: 0 10px 25px rgba(182, 91, 58, 0.25);
+    }
+
+    .brand-mark {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .brand-sub {
+      margin: 0.1rem 0 0;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted-foreground);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.78rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(48, 91, 70, 0.08);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.15rem;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover,
+    .nav-cta:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(48, 91, 70, 0.12);
+      outline: none;
+    }
+
+    .nav-cta.primary {
+      background: var(--aconfly-terracotta);
+      color: var(--aconfly-white);
+    }
+
+    .nav-cta.secondary {
+      background: rgba(255, 253, 249, 0.42);
+      color: var(--foreground);
+      border: 1px solid rgba(48, 91, 70, 0.12);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid rgba(48, 91, 70, 0.12);
+      background: rgba(255, 253, 249, 0.55);
+      color: var(--foreground);
+      border-radius: 50%;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 4rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(14, 13, 10, 0.68) 0%, rgba(14, 13, 10, 0.32) 35%, rgba(14, 13, 10, 0.12) 58%, rgba(14, 13, 10, 0.42) 100%),
+        linear-gradient(180deg, rgba(245, 238, 229, 0.02) 0%, rgba(26, 24, 21, 0.34) 100%);
+      z-index: 1;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.95) contrast(1.03) brightness(0.85);
+      transform: scale(1.04);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(290px, 0.62fr);
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .hero-copy {
+      color: var(--aconfly-white);
+      max-width: 46rem;
+    }
+
+    .hero-kicker {
+      color: rgba(255, 250, 241, 0.85);
+    }
+
+    .hero-title {
+      margin: 0.8rem 0 1.2rem;
+      font-size: clamp(3rem, 8vw, 6.7rem);
+      line-height: 0.96;
+      max-width: 14ch;
+    }
+
+    .hero-copy p {
+      max-width: 38rem;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      color: rgba(255, 250, 241, 0.92);
+      margin: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .hero-actions .nav-cta {
+      padding-inline: 1.25rem;
+      min-height: 3.5rem;
+    }
+
+    .hero-meta {
+      padding: 1.5rem;
+      border-radius: var(--aconfly-radius);
+      align-self: end;
+    }
+
+    .hero-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .hero-meta-item {
+      padding: 1rem;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.38);
+      border: 1px solid rgba(255, 255, 255, 0.46);
+    }
+
+    .hero-meta-item strong {
+      display: block;
+      font-size: 1.4rem;
+      line-height: 1.05;
+      color: var(--aconfly-forest-deep);
+    }
+
+    .hero-meta-item span {
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      color: var(--aconfly-stone);
+    }
+
+    .hero-panel-caption {
+      margin: 0;
+      color: var(--aconfly-stone);
+      font-size: 0.98rem;
+    }
+
+    .hero-note {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(48, 91, 70, 0.12);
+      color: var(--aconfly-stone);
+      font-size: 0.92rem;
+    }
+
+    main section {
+      position: relative;
+      padding: 5.8rem 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.6rem;
+    }
+
+    .service-card {
+      position: relative;
+      padding: 1.55rem;
+      border-radius: var(--aconfly-radius);
+      background: rgba(255, 253, 249, 0.82);
+      border: 1px solid rgba(48, 91, 70, 0.1);
+      box-shadow: var(--aconfly-shadow);
+      overflow: hidden;
+    }
+
+    .service-card:nth-child(1) {
+      grid-column: span 4;
+      margin-top: 1.3rem;
+    }
+
+    .service-card:nth-child(2) {
+      grid-column: span 4;
+      margin-top: 0;
+    }
+
+    .service-card:nth-child(3) {
+      grid-column: span 4;
+      margin-top: 2.2rem;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -35% auto;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 164, 65, 0.16), transparent 70%);
+    }
+
+    .service-card .card-icon,
+    .timeline-number,
+    .contact-badge,
+    .floating-button {
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .service-card .card-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 18px;
+      background: rgba(182, 91, 58, 0.11);
+      color: var(--aconfly-terracotta);
+    }
+
+    .service-card h3 {
+      margin: 1rem 0 0.6rem;
+      font-size: 1.9rem;
+      line-height: 1.05;
+    }
+
+    .service-card p {
+      color: var(--muted-foreground);
+      margin: 0;
+    }
+
+    .service-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(48, 91, 70, 0.07);
+      color: var(--aconfly-forest);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .service-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .text-link {
+      color: var(--aconfly-terracotta);
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      white-space: nowrap;
+    }
+
+    .text-link:hover,
+    .text-link:focus-visible {
+      color: var(--aconfly-terracotta-deep);
+      outline: none;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.8rem;
+    }
+
+    .timeline-card {
+      position: relative;
+      padding: 1.5rem;
+      border-radius: var(--aconfly-radius);
+      background: linear-gradient(180deg, rgba(255, 253, 249, 0.95), rgba(245, 238, 229, 0.78));
+      border: 1px solid rgba(48, 91, 70, 0.1);
+      box-shadow: var(--aconfly-shadow);
+    }
+
+    .timeline-number {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--aconfly-forest), var(--aconfly-terracotta));
+      color: var(--aconfly-white);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .timeline-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.5rem;
+    }
+
+    .timeline-card p {
+      margin: 0;
+      color: var(--muted-foreground);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.4rem;
+      margin-top: 2.8rem;
+      align-items: stretch;
+    }
+
+    .about-card,
+    .about-image-card,
+    .contact-card,
+    .gallery-intro,
+    .testimonial-card,
+    .faq-item {
+      border-radius: var(--aconfly-radius);
+      border: 1px solid rgba(48, 91, 70, 0.1);
+      box-shadow: var(--aconfly-shadow);
+    }
+
+    .about-card,
+    .contact-card,
+    .gallery-intro,
+    .testimonial-card,
+    .faq-item {
+      background: rgba(255, 253, 249, 0.84);
+    }
+
+    .about-card {
+      padding: 1.7rem;
+    }
+
+    .about-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.95rem;
+      line-height: 1.05;
+    }
+
+    .about-card p {
+      margin: 0 0 1rem;
+      color: var(--muted-foreground);
+    }
+
+    .founders-quote {
+      margin-top: 1.2rem;
+      padding: 1.15rem 1.2rem;
+      border-left: 4px solid var(--aconfly-terracotta);
+      background: rgba(182, 91, 58, 0.06);
+      border-radius: 0 18px 18px 0;
+      color: var(--foreground);
+      font-size: 1rem;
+    }
+
+    .about-image-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      background: var(--aconfly-sand);
+    }
+
+    .about-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-image-caption {
+      position: absolute;
+      inset: auto 1rem 1rem 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: 22px;
+      background: rgba(26, 24, 21, 0.58);
+      color: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .gallery-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-intro {
+      padding: 1.4rem 1.5rem;
+    }
+
+    .gallery-grid {
+      columns: 3 280px;
+      column-gap: 1rem;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin: 0 0 1rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(48, 91, 70, 0.1);
+      box-shadow: var(--aconfly-shadow);
+      background: var(--aconfly-sand);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      inset: auto 1rem 1rem 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      color: var(--aconfly-white);
+      background: linear-gradient(180deg, rgba(26, 24, 21, 0.05), rgba(26, 24, 21, 0.72));
+      backdrop-filter: blur(10px);
+    }
+
+    .gallery-caption strong,
+    .gallery-caption span {
+      display: block;
+    }
+
+    .gallery-caption span {
+      font-size: 0.92rem;
+      color: rgba(255, 253, 249, 0.82);
+    }
+
+    .testimonials-wrapper {
+      margin-top: 2.6rem;
+      overflow-x: auto;
+      padding-bottom: 0.4rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(182, 91, 58, 0.55) transparent;
+    }
+
+    .testimonials-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 1fr);
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .testimonial-card {
+      scroll-snap-align: start;
+      padding: 1.5rem;
+      min-height: 100%;
+    }
+
+    .testimonial-stars {
+      display: inline-flex;
+      gap: 0.25rem;
+      color: var(--aconfly-amber);
+      margin-bottom: 0.9rem;
+    }
+
+    .testimonial-card p {
+      margin: 0 0 1.1rem;
+      color: var(--muted-foreground);
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .testimonial-author span {
+      display: inline-grid;
+      place-items: center;
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      background: rgba(182, 91, 58, 0.12);
+      color: var(--aconfly-terracotta);
+      font-weight: 700;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .faq-item {
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: left;
+      padding: 1.25rem 1.35rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--foreground);
+      font-weight: 700;
+    }
+
+    .faq-question span:first-child {
+      font-size: 1.03rem;
+    }
+
+    .faq-answer {
+      padding: 0 1.35rem 1.25rem;
+      color: var(--muted-foreground);
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-question .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.2rem;
+      margin-top: 2.6rem;
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+    }
+
+    .contact-badge {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: rgba(217, 164, 65, 0.18);
+      color: var(--aconfly-forest);
+      margin-bottom: 1rem;
+    }
+
+    .contact-stack {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      color: var(--muted-foreground);
+    }
+
+    .contact-detail strong {
+      display: block;
+      color: var(--foreground);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 0.45rem;
+      font-weight: 600;
+      color: var(--foreground);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid rgba(48, 91, 70, 0.14);
+      border-radius: 18px;
+      padding: 0.95rem 1rem;
+      background: rgba(255, 253, 249, 0.72);
+      color: var(--foreground);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--aconfly-terracotta);
+      box-shadow: 0 0 0 4px rgba(182, 91, 58, 0.12);
+      outline: none;
+    }
+
+    .contact-form textarea {
+      min-height: 10rem;
+      resize: vertical;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      background: linear-gradient(180deg, rgba(48, 91, 70, 0.02), rgba(48, 91, 70, 0.08));
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted-foreground);
+    }
+
+    .footer a {
+      color: var(--foreground);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .floating-stack {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 60;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .floating-button {
+      width: 3.7rem;
+      height: 3.7rem;
+      border-radius: 50%;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 16px 32px rgba(26, 24, 21, 0.18);
+      transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .floating-button:hover,
+    .floating-button:focus-visible {
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .floating-button.whatsapp {
+      background: linear-gradient(135deg, #1fa562, #128c7e);
+      color: white;
+    }
+
+    .floating-button.top {
+      background: var(--aconfly-white);
+      color: var(--aconfly-terracotta);
+      opacity: 0;
+      visibility: hidden;
+      border: 1px solid rgba(48, 91, 70, 0.1);
+    }
+
+    .floating-button.top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-content,
+      .about-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .service-card:nth-child(1),
+      .service-card:nth-child(2),
+      .service-card:nth-child(3) {
+        grid-column: span 6;
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-inner {
+        border-radius: 28px;
+        align-items: flex-start;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-panel {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+        border-radius: 28px;
+        background: rgba(255, 253, 249, 0.96);
+        border: 1px solid rgba(48, 91, 70, 0.08);
+        box-shadow: var(--aconfly-shadow);
+      }
+
+      .nav-panel.open {
+        display: flex;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links a,
+      .nav-cta {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 8.5rem;
+      }
+
+      .hero-meta-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-header {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .services-grid,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card:nth-child(1),
+      .service-card:nth-child(2),
+      .service-card:nth-child(3) {
+        grid-column: auto;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .testimonials-track {
+        grid-auto-columns: 86%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <header class="site-nav" id="inicio">
+    <nav class="nav-inner" aria-label="Navegación principal">
+      <a class="brand-lockup" href="#hero" aria-label="Ir al inicio de ACONFLY">
+        <span class="brand-badge" aria-hidden="true"><i data-lucide="wind"></i></span>
+        <span>
+          <strong class="brand-mark">ACONFLY</strong>
+          <span class="brand-sub">El valle desde otra vista</span>
+        </span>
+      </a>
+      <button
+        class="mobile-menu-toggle"
+        id="mobile-menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-nav-panel"
+      >
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-panel" id="mobile-nav-panel">
+        <ul class="nav-links">
+          <li><a href="#servicios" data-dom-id="nav-servicios" aria-label="Ir a servicios">Servicios</a></li>
+          <li><a href="#como-funciona" data-dom-id="nav-como-funciona" aria-label="Ir a cómo funciona">Cómo funciona</a></li>
+          <li><a href="#sobre-nosotros" data-dom-id="nav-sobre" aria-label="Ir a sobre nosotros">Sobre nosotros</a></li>
+          <li><a href="#galeria" data-dom-id="nav-galeria" aria-label="Ir a galería">Galería</a></li>
+          <li><a href="#faq" data-dom-id="nav-faq" aria-label="Ir a preguntas frecuentes">FAQ</a></li>
+          <li><a href="#contacto" data-dom-id="nav-contacto" aria-label="Ir a contacto">Contacto</a></li>
+        </ul>
+        <a
+          class="nav-cta primary"
+          href="https://wa.me/56XXXXXXXXX"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Reservar por WhatsApp"
+        >
+          Reservar ahora
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero" aria-label="Presentación principal de ACONFLY">
+      <div class="hero-media" aria-hidden="true">
+        <img src="hero-paragliding.svg" alt="" />
+      </div>
+      <div class="container-shell hero-content">
+        <div class="hero-copy reveal">
+          <span class="eyebrow hero-kicker">ACONFLY · Santa María, Chile</span>
+          <h1 class="hero-title">Donde termina el miedo, empieza AconFly</h1>
+          <p>Vuelos en parapente en tándem sobre el Valle del Aconcagua. Santa María, Chile.</p>
+          <div class="hero-actions">
+            <a
+              class="nav-cta primary"
+              href="https://wa.me/56XXXXXXXXX"
+              target="_blank"
+              rel="noreferrer"
+              data-dom-id="cta-reserva-hero"
+              aria-label="Reservar vuelo por WhatsApp"
+            >
+              Reserva tu vuelo
+            </a>
+            <a
+              class="nav-cta secondary"
+              href="https://instagram.com/acon.fly"
+              target="_blank"
+              rel="noreferrer"
+              data-dom-id="cta-instagram-hero"
+              aria-label="Ver Instagram de ACONFLY"
+            >
+              Ver Instagram
+            </a>
+          </div>
+        </div>
+        <aside class="hero-meta glass-panel reveal" aria-label="Resumen de experiencia ACONFLY">
+          <p class="hero-panel-caption">
+            Una primera vista editorial del valle: altura, calma, instrucción clara y una aventura diseñada para sentirse segura desde el primer paso.
+          </p>
+          <div class="hero-meta-grid">
+            <div class="hero-meta-item">
+              <strong>Todo el año</strong>
+              <span>Según viento y condiciones del día</span>
+            </div>
+            <div class="hero-meta-item">
+              <strong>En tándem</strong>
+              <span>Con piloto y equipo incluidos</span>
+            </div>
+            <div class="hero-meta-item">
+              <strong>Santa María</strong>
+              <span>Valle del Aconcagua, Chile</span>
+            </div>
+            <div class="hero-meta-item">
+              <strong>Memorable</strong>
+              <span>Fotos, paisaje y sensación de libertad</span>
+            </div>
+          </div>
+          <div class="hero-note">
+            El valle desde otra vista.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios" aria-labelledby="servicios-title">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Servicios</span>
+          <h2 id="servicios-title">Tres maneras de vivir el aire.</h2>
+          <p>
+            Cada vuelo mantiene la misma esencia: cercanía, seguridad y una experiencia pensada para disfrutar el Valle del Aconcagua con intensidad, calma y confianza.
+          </p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal" aria-labelledby="servicio-bautismo">
+            <div class="card-icon" aria-hidden="true"><i data-lucide="bird"></i></div>
+            <h3 id="servicio-bautismo">Bautismo en parapente</h3>
+            <p>
+              La entrada perfecta para quienes quieren sentir su primer despegue con acompañamiento total, briefing claro y una experiencia amable desde tierra hasta el aterrizaje.
+            </p>
+            <span class="service-highlight">Ideal para primera vez</span>
+            <div class="service-footer">
+              <small>Suave, guiado y emocionante</small>
+              <a
+                class="text-link"
+                href="https://wa.me/56XXXXXXXXX"
+                target="_blank"
+                rel="noreferrer"
+                data-dom-id="cta-servicio-bautismo"
+                aria-label="Consultar bautismo en parapente"
+              >
+                Consultar
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </article>
+          <article class="service-card reveal" aria-labelledby="servicio-tandem">
+            <div class="card-icon" aria-hidden="true"><i data-lucide="mountain"></i></div>
+            <h3 id="servicio-tandem">Vuelo tándem aventura</h3>
+            <p>
+              Un recorrido amplio sobre laderas, viñas y horizontes del valle para quienes quieren un vuelo protagonista, con más tiempo en el aire y una emoción más marcada.
+            </p>
+            <span class="service-highlight">Nuestro vuelo insignia</span>
+            <div class="service-footer">
+              <small>Más altura, más paisaje</small>
+              <a
+                class="text-link"
+                href="https://wa.me/56XXXXXXXXX"
+                target="_blank"
+                rel="noreferrer"
+                data-dom-id="cta-servicio-tandem"
+                aria-label="Consultar vuelo tándem aventura"
+              >
+                Consultar
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </article>
+          <article class="service-card reveal" aria-labelledby="servicio-panoramico">
+            <div class="card-icon" aria-hidden="true"><i data-lucide="camera"></i></div>
+            <h3 id="servicio-panoramico">Vuelo panorámico</h3>
+            <p>
+              Una propuesta contemplativa para quienes priorizan paisaje, luz y una lectura tranquila del territorio, perfecta para atardeceres y recuerdos visuales inolvidables.
+            </p>
+            <span class="service-highlight">Paisaje y fotografía</span>
+            <div class="service-footer">
+              <small>Mirada amplia del valle</small>
+              <a
+                class="text-link"
+                href="https://wa.me/56XXXXXXXXX"
+                target="_blank"
+                rel="noreferrer"
+                data-dom-id="cta-servicio-panoramico"
+                aria-label="Consultar vuelo panorámico"
+              >
+                Consultar
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" aria-labelledby="como-funciona-title">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Cómo funciona</span>
+          <h2 id="como-funciona-title">Una experiencia clara en cuatro pasos.</h2>
+          <p>
+            Desde el primer mensaje hasta volver a tierra, cuidamos el ritmo de la experiencia para que todo se sienta simple, humano y bien acompañado.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-card reveal">
+            <div class="timeline-number">01</div>
+            <h3>Escribes y coordinamos</h3>
+            <p>
+              Conversemos por WhatsApp sobre disponibilidad, clima, punto de encuentro y el tipo de vuelo que mejor se ajusta a tu plan.
+            </p>
+          </article>
+          <article class="timeline-card reveal">
+            <div class="timeline-number">02</div>
+            <h3>Llegas y te preparamos</h3>
+            <p>
+              Hacemos una inducción breve, revisamos equipo, resolvemos dudas y te explicamos con calma el despegue, el vuelo y el aterrizaje.
+            </p>
+          </article>
+          <article class="timeline-card reveal">
+            <div class="timeline-number">03</div>
+            <h3>Despegamos juntos</h3>
+            <p>
+              Corremos unos pasos, el valle se abre frente a ti y todo cambia de escala: aire limpio, horizonte amplio y una sensación total de libertad.
+            </p>
+          </article>
+          <article class="timeline-card reveal">
+            <div class="timeline-number">04</div>
+            <h3>Aterrizas con recuerdos</h3>
+            <p>
+              Cerramos la experiencia con una llegada suave, fotos del momento y la certeza de haber visto Santa María desde una perspectiva única.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-nosotros" aria-labelledby="sobre-title">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Sobre nosotros</span>
+          <h2 id="sobre-title">Volar con calidez, no con prisa.</h2>
+          <p>
+            ACONFLY nace desde el vínculo con el territorio, la conversación honesta y el deseo de compartir el cielo del valle con una atención cercana y confiable.
+          </p>
+        </div>
+        <div class="about-layout">
+          <article class="about-card reveal">
+            <h3>Somos Martín y Belén</h3>
+            <p>
+              Martín empezó a volar en parapente a los 14 años. Hoy, con 25, lleva más de una década leyendo el viento, conociendo cada rincón del cielo sobre el Valle del Aconcagua y perfeccionando cada vuelo. Para él, el parapente nunca fue solo un deporte — fue la forma de descubrir que el valle que lo vio crecer es, desde las alturas, algo completamente distinto.
+            </p>
+            <p>
+              Belén es quien captura esa magia. Con su cámara en mano, documenta cada despegue, cada planeo y cada aterrizaje para que nada de esto se pierda. Gracias a ella, quienes aún no se han animado a volar pueden empezar a imaginar lo que se siente.
+            </p>
+            <p>
+              Juntos fundamos AconFly con una sola idea en mente: que más personas puedan ver el Valle del Aconcagua desde otra perspectiva. Desde Santa María, donde el viento es bueno y el paisaje no tiene comparación, te invitamos a soltar el suelo aunque sea por unos minutos.
+            </p>
+            <div class="founders-quote">
+              El valle siempre fue hermoso. Desde arriba, es impresionante.
+            </div>
+          </article>
+          <figure class="about-image-card reveal">
+            <img
+              src="gallery-couple-founders.svg"
+              alt="Pareja fundadora de ACONFLY en el paisaje del Valle del Aconcagua"
+            />
+            <figcaption class="about-image-caption">
+              Santa María como punto de partida. El valle como escenario. La confianza como forma de volar.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" aria-labelledby="galeria-title">
+      <div class="container-shell">
+        <div class="gallery-header reveal">
+          <div class="section-heading" style="margin: 0;">
+            <span class="eyebrow">Galería</span>
+            <h2 id="galeria-title">Luz, altura y valle abierto.</h2>
+            <p>
+              Un recorrido visual por crestas, despegues, panoramas y ese instante en que el suelo deja de ser el centro.
+            </p>
+          </div>
+          <div class="gallery-intro">
+            <p style="margin: 0 0 1rem; color: var(--muted-foreground);">
+              Más escenas y momentos reales en nuestra cuenta de Instagram.
+            </p>
+            <a
+              class="nav-cta primary"
+              href="https://instagram.com/acon.fly"
+              target="_blank"
+              rel="noreferrer"
+              data-dom-id="cta-instagram-galeria"
+              aria-label="Ver galería de Instagram de ACONFLY"
+            >
+              Abrir Instagram
+            </a>
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <img src="gallery-ridge-flight.svg" alt="Vuelo sobre una ladera del Valle del Aconcagua" />
+            <figcaption class="gallery-caption">
+              <strong>Vuelo de cresta</strong>
+              <span>La geografía del valle dibujada desde arriba.</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="gallery-sunset-glide.svg" alt="Parapente planeando al atardecer" />
+            <figcaption class="gallery-caption">
+              <strong>Luz de atardecer</strong>
+              <span>Una hora dorada que vuelve todo más lento.</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="gallery-tandem-takeoff.svg" alt="Despegue de un vuelo en tándem" />
+            <figcaption class="gallery-caption">
+              <strong>Despegue en tándem</strong>
+              <span>El momento exacto en que comienza la aventura.</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="gallery-valley-panorama.svg" alt="Panorámica amplia del Valle del Aconcagua" />
+            <figcaption class="gallery-caption">
+              <strong>Panorámica del valle</strong>
+              <span>Viñas, cordones y horizonte abierto.</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="gallery-canopy-detail.svg" alt="Detalle del canopy de un parapente en vuelo" />
+            <figcaption class="gallery-caption">
+              <strong>Detalle del canopy</strong>
+              <span>Textura, color y viento trabajando en conjunto.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios" aria-labelledby="testimonios-title">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Testimonios</span>
+          <h2 id="testimonios-title">La sensación se repite en cada relato.</h2>
+          <p>
+            Historias breves de personas que llegaron con nervios, curiosidad o ganas de celebrar algo importante y se fueron con una nueva vista del valle.
+          </p>
+        </div>
+        <div class="testimonials-wrapper reveal" aria-label="Carrusel horizontal de testimonios">
+          <div class="testimonials-track">
+            <article class="testimonial-card">
+              <div class="testimonial-stars" aria-label="Cinco estrellas">
+                <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+              </div>
+              <p>
+                “Llegué con nervios y me fui con una sonrisa enorme. La explicación fue clara, el vuelo hermoso y el trato realmente cercano.”
+              </p>
+              <div class="testimonial-author">
+                <span>MP</span>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.15rem;">María Paz</h3>
+                  <small>Primera experiencia en parapente</small>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-stars" aria-label="Cinco estrellas">
+                <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+              </div>
+              <p>
+                “No se sintió turístico ni impersonal. Fue una aventura bien guiada, cálida y con vistas que todavía sigo recordando.”
+              </p>
+              <div class="testimonial-author">
+                <span>CR</span>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.15rem;">Catalina R.</h3>
+                  <small>Vuelo en pareja</small>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-stars" aria-label="Cinco estrellas">
+                <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+              </div>
+              <p>
+                “El valle se ve inmenso desde arriba. Se nota el cuidado por la seguridad y por hacerte sentir tranquilo en cada momento.”
+              </p>
+              <div class="testimonial-author">
+                <span>JT</span>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.15rem;">Javier T.</h3>
+                  <small>Vuelo panorámico</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Preguntas frecuentes antes de volar.</h2>
+          <p>
+            Respuestas simples para que llegues con claridad, expectativas realistas y la tranquilidad necesaria para disfrutar la experiencia.
+          </p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item reveal open">
+            <h3 style="margin: 0;">
+              <button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-1">
+                <span>¿Necesito experiencia previa para volar?</span>
+                <i class="faq-icon" data-lucide="plus"></i>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-1">
+              No. Los vuelos son en tándem, así que vas acompañado por un piloto. Solo necesitas seguir indicaciones simples durante el despegue y el aterrizaje.
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <h3 style="margin: 0;">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
+                <span>¿Qué pasa si el clima no acompaña?</span>
+                <i class="faq-icon" data-lucide="plus"></i>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-2">
+              La seguridad manda. Si las condiciones de viento o térmica no son adecuadas, reprogramamos el vuelo para una mejor ventana.
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <h3 style="margin: 0;">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
+                <span>¿Qué ropa conviene llevar?</span>
+                <i class="faq-icon" data-lucide="plus"></i>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-3">
+              Recomendamos ropa cómoda, zapatillas cerradas, una capa ligera para el viento y lentes de sol. Nosotros indicaremos cualquier detalle adicional antes del vuelo.
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <h3 style="margin: 0;">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
+                <span>¿Se pueden tomar fotos o videos?</span>
+                <i class="faq-icon" data-lucide="plus"></i>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-4">
+              Sí, dependiendo del tipo de vuelo y de las condiciones del día. Escríbenos para conocer las opciones disponibles y cómo coordinarlas.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" aria-labelledby="contacto-title">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2 id="contacto-title">Reserva, pregunta o empieza la conversación.</h2>
+          <p>
+            Si quieres cotizar, elegir tu vuelo o resolver dudas sobre fechas y clima, estamos a un mensaje de distancia.
+          </p>
+        </div>
+        <div class="contact-layout">
+          <article class="contact-card reveal">
+            <div class="contact-badge" aria-hidden="true"><i data-lucide="map-pinned"></i></div>
+            <h3 style="margin: 0 0 0.8rem; font-size: 1.8rem; font-family: 'Iowan Old Style', Georgia, serif;">ACONFLY</h3>
+            <p style="margin: 0; color: var(--muted-foreground);">
+              Santa María, Valle del Aconcagua, Chile. Aventuras en parapente en tándem con una atención cercana, cálida y enfocada en seguridad.
+            </p>
+            <div class="contact-stack">
+              <div class="contact-detail">
+                <i data-lucide="phone"></i>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <span>Respuesta directa para coordinar reservas y condiciones del día.</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <i data-lucide="instagram"></i>
+                <div>
+                  <strong>Instagram</strong>
+                  <span>Historias, paisajes, momentos de vuelo y novedades de temporada.</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <i data-lucide="sun-medium"></i>
+                <div>
+                  <strong>Mejores ventanas</strong>
+                  <span>Las condiciones cambian día a día, por eso confirmamos según clima y viento.</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-actions" style="margin-top: 1.5rem;">
+              <a
+                class="nav-cta primary"
+                href="https://wa.me/56XXXXXXXXX"
+                target="_blank"
+                rel="noreferrer"
+                data-dom-id="cta-whatsapp-contacto"
+                aria-label="Escribir por WhatsApp a ACONFLY"
+              >
+                Escribir por WhatsApp
+              </a>
+            </div>
+          </article>
+          <article class="contact-card reveal">
+            <form class="contact-form" aria-label="Formulario de contacto simple">
+              <div class="form-grid">
+                <label>
+                  Nombre
+                  <input type="text" name="nombre" placeholder="Tu nombre" aria-label="Nombre" />
+                </label>
+                <label>
+                  Teléfono
+                  <input type="tel" name="telefono" placeholder="Tu número" aria-label="Teléfono" />
+                </label>
+              </div>
+              <div class="form-grid">
+                <label>
+                  Correo
+                  <input type="email" name="correo" placeholder="tu@correo.cl" aria-label="Correo electrónico" />
+                </label>
+                <label>
+                  Tipo de vuelo
+                  <input type="text" name="vuelo" placeholder="Bautismo, aventura o panorámico" aria-label="Tipo de vuelo" />
+                </label>
+              </div>
+              <label>
+                Mensaje
+                <textarea name="mensaje" placeholder="Cuéntanos cuándo te gustaría volar y qué necesitas saber." aria-label="Mensaje"></textarea>
+              </label>
+              <button class="nav-cta primary" type="submit" aria-label="Enviar formulario de contacto">
+                Enviar mensaje
+              </button>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container-shell footer-inner">
+      <div>
+        <strong style="display: block; color: var(--foreground);">ACONFLY</strong>
+        <span>El valle desde otra vista</span>
+      </div>
+      <div>
+        <a href="#hero" aria-label="Volver al inicio">Volver arriba</a>
+      </div>
+      <div>
+        Santa María · Valle del Aconcagua · Chile
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-stack" aria-label="Acciones rápidas">
+    <a
+      class="floating-button whatsapp"
+      href="https://wa.me/56XXXXXXXXX"
+      target="_blank"
+      rel="noreferrer"
+      data-dom-id="cta-whatsapp-float"
+      aria-label="Abrir WhatsApp de ACONFLY"
+    >
+      <i data-lucide="message-circle-more"></i>
+    </a>
+    <button
+      class="floating-button top"
+      id="back-to-top"
+      type="button"
+      data-dom-id="cta-back-to-top"
+      aria-label="Volver arriba"
+    >
+      <i data-lucide="arrow-up"></i>
+    </button>
+  </div>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navPanel = document.getElementById('mobile-nav-panel');
+    const backToTop = document.getElementById('back-to-top');
+    const faqButtons = document.querySelectorAll('.faq-question');
+    const revealItems = document.querySelectorAll('.reveal');
+    const mobileLinks = navPanel.querySelectorAll('a');
+
+    const updateNav = () => {
+      if (window.scrollY > 24) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+
+      if (window.scrollY > 700) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    };
+
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navPanel.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        navPanel.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú');
+      });
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        faqButtons.forEach((other) => {
+          const otherItem = other.closest('.faq-item');
+          otherItem.classList.remove('open');
+          other.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16 }
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    document.querySelector('.contact-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const message = encodeURIComponent('Hola ACONFLY, quiero más información sobre un vuelo.');
+      window.open(`https://wa.me/56XXXXXXXXX?text=${message}`, '_blank', 'noopener');
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>

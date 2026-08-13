@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Planeo al atardecer</title>
+  <desc id="desc">Un parapente desciende suavemente durante el atardecer sobre lomas y viñedos del Valle del Aconcagua, con luz ámbar y sombras profundas.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4CF97"/>
+      <stop offset="35%" stop-color="#E99656"/>
+      <stop offset="70%" stop-color="#A25337"/>
+      <stop offset="100%" stop-color="#573226"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFF2D7"/>
+      <stop offset="100%" stop-color="#F4C37D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#sky)"/>
+  <circle cx="506" cy="362" r="172" fill="url(#sun)"/>
+  <circle cx="506" cy="362" r="76" fill="#F9E8CF" opacity="0.92"/>
+
+  <path d="M0 528C98 495 168 510 246 479C350 439 434 374 519 362C626 347 735 407 900 349V0H0Z" fill="#EAB77B" opacity="0.42"/>
+  <path d="M0 742L95 700L176 719L286 666L370 694L478 634L565 666L664 605L770 649L900 596V838H0Z" fill="#7E4B35"/>
+  <path d="M0 882L126 840L242 876L362 814L463 849L572 788L686 832L790 786L900 825V1200H0Z" fill="#4F2F26"/>
+
+  <g transform="translate(482 416)">
+    <path d="M-155 0C-100 -58 66 -58 155 0C115 23 64 38 0 41C-67 38 -116 24 -155 0Z" fill="#D85A30"/>
+    <path d="M-136 6C-81 -39 53 -39 135 6" fill="none" stroke="#F7EAD6" stroke-width="4" opacity="0.45"/>
+    <path d="M-84 20L-10 160L78 22" fill="none" stroke="#251917" stroke-width="4"/>
+    <circle cx="-2" cy="171" r="7" fill="#1D1311"/>
+    <path d="M-2 179L-2 216M-2 194L-20 211M-2 194L18 210M-2 216L-16 243M-2 216L13 244" stroke="#1D1311" stroke-width="4.2" stroke-linecap="round"/>
+  </g>
+
+  <path d="M0 995L112 951L236 989L360 932L482 970L608 915L727 957L836 913L900 938V1200H0Z" fill="#3B6D11"/>
+  <path d="M54 1002L151 958L236 990L138 1042Z" fill="#AD6D35"/>
+  <path d="M258 1016L353 970L438 1001L338 1055Z" fill="#8A572F"/>
+  <path d="M506 996L602 950L695 984L596 1038Z" fill="#BA7517"/>
+  <path d="M708 982L796 944L876 972L785 1022Z" fill="#C98743"/>
+
+  <g fill="#F8E8D4" opacity="0.4">
+    <ellipse cx="206" cy="238" rx="52" ry="15"/>
+    <ellipse cx="281" cy="220" rx="42" ry="12"/>
+    <ellipse cx="696" cy="278" rx="60" ry="16"/>
+  </g>
+</svg>

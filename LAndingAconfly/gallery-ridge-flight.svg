@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Vuelo de ladera en la cordillera</title>
+  <desc id="desc">Un piloto vuela en parapente junto a una cresta rocosa sobre el Valle del Aconcagua, con tonos cálidos y vegetación de montaña.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5DEC0"/>
+      <stop offset="55%" stop-color="#F2B877"/>
+      <stop offset="100%" stop-color="#E5A160"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C7854D"/>
+      <stop offset="100%" stop-color="#7D4D2E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="954" cy="124" r="52" fill="#F8EBD8" opacity="0.82"/>
+  <path d="M0 350C134 322 236 346 358 312C502 272 622 194 750 194C898 194 1010 256 1200 213V0H0Z" fill="#F1DAB9" opacity="0.72"/>
+  <path d="M0 452L138 398L248 432L366 360L504 401L624 322L738 351L862 288L996 330L1200 262V548H0Z" fill="#D8C6B1"/>
+  <path d="M0 610L144 522L250 552L384 472L518 510L658 425L790 462L932 378L1078 430L1200 398V800H0Z" fill="#9B6B45"/>
+
+  <path d="M760 800L1200 800V130L1115 202L1038 190L962 256L904 244L852 308L797 298L742 384L707 378L666 457L628 452L577 553L535 545L495 642L760 800Z" fill="url(#ridge)"/>
+  <path d="M989 213L937 257L885 247L835 305L784 295L731 381L693 375L650 453L613 449L578 519" fill="none" stroke="#EAD8C1" stroke-width="5" opacity="0.45"/>
+
+  <g transform="translate(580 276)">
+    <path d="M-128 0C-80 -45 39 -51 126 0C84 22 45 31 -2 34C-53 31 -91 20 -128 0Z" fill="#BA7517"/>
+    <path d="M-110 4C-69 -29 35 -35 109 4" fill="none" stroke="#F8EAD7" stroke-width="3" opacity="0.55"/>
+    <path d="M-63 16L-8 100L51 18" fill="none" stroke="#4A3B31" stroke-width="3.2"/>
+    <circle cx="-4" cy="106" r="6.5" fill="#352922"/>
+    <path d="M-4 113L-4 142M-4 124L-19 139M-4 124L11 138M-4 142L-16 165M-4 142L9 166" stroke="#352922" stroke-width="3.6" stroke-linecap="round"/>
+  </g>
+
+  <path d="M0 684L154 645L272 685L412 641L526 681L668 631L776 676L914 629L1038 679L1200 641V800H0Z" fill="#3B6D11"/>
+  <path d="M112 678L172 650L232 675L174 706Z" fill="#C8873E"/>
+  <path d="M348 687L420 648L489 675L416 712Z" fill="#B97A37"/>
+  <path d="M682 682L750 646L820 673L748 709Z" fill="#D39A54"/>
+  <path d="M954 686L1038 644L1110 673L1021 716Z" fill="#C98540"/>
+</svg>

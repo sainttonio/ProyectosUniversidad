@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Pareja fundadora frente al valle</title>
+  <desc id="desc">Una pareja observa el Valle del Aconcagua desde un mirador con equipo de parapente, en una escena cálida de aventura y hospitalidad.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6E5C8"/>
+      <stop offset="55%" stop-color="#F0C690"/>
+      <stop offset="100%" stop-color="#DFA168"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E8C31"/>
+      <stop offset="100%" stop-color="#3B6D11"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="1200" fill="url(#sky)"/>
+  <circle cx="716" cy="182" r="64" fill="#FBF0DE" opacity="0.86"/>
+  <path d="M0 470C95 438 172 451 243 430C348 398 426 336 505 330C614 323 721 391 960 327V0H0Z" fill="#EFD8B6" opacity="0.68"/>
+  <path d="M0 636L114 592L206 613L319 553L420 586L526 526L626 554L734 494L840 530L960 484V729H0Z" fill="#C8AF92"/>
+  <path d="M0 862L130 805L250 846L364 779L484 821L595 761L728 812L844 752L960 798V1200H0Z" fill="url(#ground)"/>
+
+  <path d="M594 828C646 792 708 777 762 790C809 802 853 838 902 890L960 958V1200H503C531 1126 545 1077 556 1018C566 955 564 882 594 828Z" fill="#E9D1B1"/>
+  <path d="M537 902C606 882 670 893 734 929C779 954 830 998 887 1052" fill="none" stroke="#CFE0DF" stroke-width="19" stroke-linecap="round" opacity="0.72"/>
+
+  <g transform="translate(336 824)">
+    <circle cx="0" cy="0" r="30" fill="#2A201C"/>
+    <path d="M-12 22L-18 172M16 24L54 180M-7 67L-69 138M8 73L70 140" stroke="#2A201C" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-18 172L-58 286M54 180L91 292" stroke="#2A201C" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-26 46C-7 39 8 39 26 46L20 174L-23 173Z" fill="#D85A30"/>
+  </g>
+
+  <g transform="translate(470 838)">
+    <circle cx="0" cy="0" r="29" fill="#2A201C"/>
+    <path d="M-8 22L-15 173M15 22L45 171M-4 67L-53 136M9 66L62 131" stroke="#2A201C" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-15 173L-46 286M45 171L79 288" stroke="#2A201C" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-23 44C-6 37 10 37 27 44L20 173L-23 173Z" fill="#BA7517"/>
+  </g>
+
+  <path d="M554 956C612 922 683 907 747 917C796 925 848 946 912 990" fill="none" stroke="#B7C8A5" stroke-width="13" stroke-linecap="round" opacity="0.6"/>
+
+  <path d="M142 959C221 919 282 912 369 934C438 951 497 995 559 1045C620 1093 691 1140 793 1170L0 1200V1014C48 996 97 981 142 959Z" fill="#5B7D22"/>
+  <path d="M84 972L174 933L257 961L162 1009Z" fill="#C88741"/>
+  <path d="M274 1000L378 955L474 988L368 1042Z" fill="#A96B34"/>
+
+  <g transform="translate(160 315)">
+    <path d="M-88 0C-56 -29 29 -34 88 0C58 13 31 20 0 21C-32 20 -59 12 -88 0Z" fill="#D85A30"/>
+    <path d="M-44 12L-4 73L38 14" fill="none" stroke="#514036" stroke-width="2.6"/>
+    <circle cx="-1" cy="78" r="5" fill="#342823"/>
+  </g>
+</svg>

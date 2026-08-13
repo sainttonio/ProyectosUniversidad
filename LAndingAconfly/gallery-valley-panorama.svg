@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Panorámica del valle con parapentes</title>
+  <desc id="desc">Una vista amplia del Valle del Aconcagua con montañas, río, mosaico agrícola y dos parapentes cruzando el cielo claro.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7E8CF"/>
+      <stop offset="50%" stop-color="#EEC78F"/>
+      <stop offset="100%" stop-color="#E4B06D"/>
+    </linearGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5E7D0"/>
+      <stop offset="100%" stop-color="#CDB8A1"/>
+    </linearGradient>
+    <linearGradient id="valley" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7D9B3E"/>
+      <stop offset="100%" stop-color="#3B6D11"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#sky)"/>
+  <circle cx="1060" cy="116" r="54" fill="#FBF0DE" opacity="0.88"/>
+  <path d="M0 292C144 263 246 274 353 248C491 213 605 145 716 146C854 146 973 215 1105 214C1228 212 1307 173 1400 153V0H0Z" fill="#F3DEBC" opacity="0.75"/>
+
+  <path d="M0 394L124 350L241 373L376 300L498 341L628 252L751 292L881 208L1004 255L1137 191L1264 241L1400 184V475H0Z" fill="url(#far)"/>
+  <path d="M0 507L154 457L271 489L405 425L531 457L668 389L808 430L936 372L1072 416L1210 360L1400 411V576H0Z" fill="#9E724C"/>
+  <path d="M0 602L138 558L274 592L401 545L529 582L670 528L804 570L935 519L1081 565L1216 516L1400 573V760H0Z" fill="url(#valley)"/>
+
+  <path d="M477 470C579 443 663 455 756 503C829 541 897 607 975 650C1042 688 1112 716 1219 736L1400 760H237C281 717 326 681 358 639C399 584 421 492 477 470Z" fill="#EED8B8"/>
+  <path d="M645 488C732 513 805 572 881 631C954 687 1036 719 1162 740" fill="none" stroke="#B0C8C8" stroke-width="24" stroke-linecap="round" opacity="0.8"/>
+
+  <path d="M40 610L156 564L257 597L366 557L473 595L585 552L692 590L802 548L921 591L1046 549L1163 592L1272 549L1400 601V760H40Z" fill="#5E7E21"/>
+  <path d="M84 613L178 571L264 600L168 648Z" fill="#D19B55"/>
+  <path d="M292 619L398 574L495 606L387 658Z" fill="#C98841"/>
+  <path d="M561 606L665 564L758 596L655 647Z" fill="#B97A38"/>
+  <path d="M850 611L958 566L1058 598L946 652Z" fill="#C88B44"/>
+  <path d="M1120 609L1224 566L1330 598L1220 652Z" fill="#AD6F36"/>
+
+  <g transform="translate(452 202)">
+    <path d="M-96 0C-61 -32 34 -36 97 0C66 15 33 22 0 24C-36 22 -67 14 -96 0Z" fill="#BA7517"/>
+    <path d="M-48 13L-5 77L40 15" fill="none" stroke="#463830" stroke-width="2.8"/>
+    <circle cx="-2" cy="82" r="5.5" fill="#312620"/>
+  </g>
+  <g transform="translate(1016 256)">
+    <path d="M-116 0C-74 -39 42 -44 117 0C82 18 41 27 0 30C-43 27 -80 17 -116 0Z" fill="#D85A30"/>
+    <path d="M-61 16L-7 103L52 18" fill="none" stroke="#45362E" stroke-width="3"/>
+    <circle cx="-2" cy="108" r="6" fill="#2B211C"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Despegue tándem en la ladera</title>
+  <desc id="desc">Dos personas inician una carrera de despegue tándem en una ladera del Valle del Aconcagua mientras el ala se infla detrás de ellas.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7E3C5"/>
+      <stop offset="60%" stop-color="#F3C488"/>
+      <stop offset="100%" stop-color="#E7B074"/>
+    </linearGradient>
+    <linearGradient id="slope" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7FA03D"/>
+      <stop offset="100%" stop-color="#3B6D11"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="760" fill="url(#sky)"/>
+  <path d="M0 312C104 292 179 300 271 279C384 254 458 207 551 201C668 194 782 239 1000 175V0H0Z" fill="#F1D9B5" opacity="0.7"/>
+  <path d="M0 430L105 386L197 409L302 354L410 384L520 330L620 360L730 314L842 349L1000 298V514H0Z" fill="#D6C1A5"/>
+  <path d="M0 510L135 496L248 472L361 470L483 426L623 405L745 373L875 337L1000 307V760H0Z" fill="url(#slope)"/>
+
+  <path d="M203 224C336 132 585 122 786 221C731 253 640 282 502 292C376 285 269 257 203 224Z" fill="#D85A30"/>
+  <path d="M243 230C347 159 557 150 739 228" fill="none" stroke="#F8E7D4" stroke-width="5" opacity="0.55"/>
+  <path d="M371 278L428 468M449 284L463 485M529 284L504 492M606 277L545 473" stroke="#EEDDC9" stroke-width="3.4"/>
+
+  <g transform="translate(469 466)">
+    <circle cx="0" cy="-48" r="14" fill="#2F231E"/>
+    <circle cx="58" cy="-50" r="14" fill="#2F231E"/>
+    <path d="M0 -33L-3 36M58 -36L60 32M-3 -2L-34 31M60 -2L95 28M-3 36L-23 78M60 32L43 78" stroke="#2F231E" stroke-width="7" stroke-linecap="round"/>
+    <path d="M58 32L78 77" stroke="#2F231E" stroke-width="7" stroke-linecap="round"/>
+    <path d="M-4 -7C14 2 31 2 58 -7" fill="none" stroke="#5E433A" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-11 3L67 3" stroke="#8D5E42" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <path d="M0 568L149 537L287 568L417 528L551 563L674 521L813 560L1000 511V760H0Z" fill="#628225" opacity="0.95"/>
+  <path d="M98 572L197 533L288 566L187 616Z" fill="#D19B55"/>
+  <path d="M332 572L426 532L515 562L420 610Z" fill="#B77B38"/>
+  <path d="M588 563L684 523L778 556L675 608Z" fill="#C78640"/>
+  <path d="M802 560L910 516L1000 544V606L896 608Z" fill="#AE6E36"/>
+</svg>
